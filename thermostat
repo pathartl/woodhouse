@@ -1,0 +1,46 @@
+#!/bin/bash
+
+SET_TEMP=$(ls /etc/thermostat/temperature)
+CUR_TEMP=$(/usr/bin/temp)
+DIF_TEMP=$(echo "$SET_TEMP-$CUR_TEMP" | bc)
+
+ACCEPTABLE_DIFFERENCE="1.5"
+
+HEAT_PIN=11
+
+# If our relay is set to on
+if [ -e /etc/thermostat/relay/1 ] ; then
+  echo "Relay is on"
+else
+  echo "Relay is off"
+fi
+
+echo The current temperature is
+echo $CUR_TEMP
+echo The desired temperature is
+echo $SET_TEMP
+echo The difference between temperatures is
+echo $DIF_TEMP
+
+if [ $(echo "$DIF_TEMP > $ACCEPTABLE_DIFFERENCE" | bc) -eq 1 ] ; then
+  echo "The current temperature is too low. Turning on the furnace!"
+  gpio write $HEAT_PIN 1
+  rm /etc/thermostat/relay/0
+  touch /etc/thermostat/relay/1
+else
+  # If the furnace is already on and we're still not up to temperature
+  # Pull the relay pin to high
+  if [ -e /etc/thermostat/relay/1 ] && [ $(echo "$DIF_TEMP > 0" | bc) -eq 1 ] ; then
+    echo "We're not up to the correct temperature yet"
+    gpio write $HEAT_PIN 1
+
+  # If the furnace is not on or if the room is equal to or higher than the desired temperature
+  # Set the relay pin to low
+  else
+    echo "The temperature is just fine"
+    gpio write $HEAT_PIN 0
+    rm /etc/thermostat/relay/1
+    touch /etc/thermostat/relay/0
+  fi
+fi
+
