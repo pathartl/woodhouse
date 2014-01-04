@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CSVLINE="$(temp),$(date +%Y),$(date +%m),$(date +%d),$(date +%H),$(date +%M)"
+
+echo $CSVLINE >> /etc/thermostat/temp.log
+tail -n 288 /etc/thermostat/temp.log > /etc/thermostat/temp.tmp
+rm /etc/thermostat/temp.log
+mv /etc/thermostat/temp.tmp /etc/thermostat/temp.log
