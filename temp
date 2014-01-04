@@ -1,0 +1,5 @@
+#!/bin/bash
+TEMP=$(cat /sys/bus/w1/devices/28*/w1_slave)
+TEMP=${TEMP:69:5}
+TEMP=$(echo "scale=1;(($TEMP / 1000) * 1.8) + 32" | bc)
+echo $TEMP
