@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Wind speed during two days'
+            },
+            subtitle: {
+                text: 'October 6th and 7th 2009 at two locations in Vik i Sogn, Norway'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Wind speed (m/s)'
+                },
+                //min: 0,
+                minorGridLineWidth: 0,
+                gridLineWidth: 0,
+                alternateGridColor: null,
+                // plotBands: [{ // Light air
+                //     from: 0.3,
+                //     to: 1.5,
+                //     color: 'rgba(68, 170, 213, 0.1)',
+                //     label: {
+                //         text: 'Light air',
+                //         style: {
+                //             color: '#606060'
+                //         }
+                //     }
+                // }, { // Light breeze
+                //     from: 1.5,
+                //     to: 3.3,
+                //     color: 'rgba(0, 0, 0, 0)',
+                //     label: {
+                //         text: 'Light breeze',
+                //         style: {
+                //             color: '#606060'
+                //         }
+                //     }
+                // }, { // Gentle breeze
+                //     from: 3.3,
+                //     to: 5.5,
+                //     color: 'rgba(68, 170, 213, 0.1)',
+                //     label: {
+                //         text: 'Gentle breeze',
+                //         style: {
+                //             color: '#606060'
+                //         }
+                //     }
+                // }, { // Moderate breeze
+                //     from: 5.5,
+                //     to: 8,
+                //     color: 'rgba(0, 0, 0, 0)',
+                //     label: {
+                //         text: 'Moderate breeze',
+                //         style: {
+                //             color: '#606060'
+                //         }
+                //     }
+                // }, { // Fresh breeze
+                //     from: 8,
+                //     to: 11,
+                //     color: 'rgba(68, 170, 213, 0.1)',
+                //     label: {
+                //         text: 'Fresh breeze',
+                //         style: {
+                //             color: '#606060'
+                //         }
+                //     }
+                // }, { // Strong breeze
+                //     from: 11,
+                //     to: 14,
+                //     color: 'rgba(0, 0, 0, 0)',
+                //     label: {
+                //         text: 'Strong breeze',
+                //         style: {
+                //             color: '#606060'
+                //         }
+                //     }
+                // }, { // High wind
+                //     from: 14,
+                //     to: 15,
+                //     color: 'rgba(68, 170, 213, 0.1)',
+                //     label: {
+                //         text: 'High wind',
+                //         style: {
+                //             color: '#606060'
+                //         }
+                //     }
+                // }]
+            },
+            tooltip: {
+                valueSuffix: ' F'
+            },
+            plotOptions: {
+                spline: {
+                    lineWidth: 4,
+                    states: {
+                        hover: {
+                            lineWidth: 5
+                        }
+                    },
+                    marker: {
+                        enabled: false
+                    },
+                    pointInterval: 600000, // one hour
+                    pointStart: Date.UTC(2009, 9, 6, 0, 0, 0)
+                }
+            },
+            series: [{
+                name: 'Hestavollane',
+                data: [70.1,70.1,70.1,70.1,70.3,69.9,69.9,69.8,69.8,69.8,69.8,69.6,69.6,69.6,69.4,69.4,69.4,69.4,69.4,69.4,69.4,69.4,69.2,69.2,69.0,69.0,69.0,69.0,69.0,69.0,68.9,68.9,68.9,68.9,68.9,68.9,68.9,68.9,68.9,68.9,69.0,69.0,69.0,69.0,69.0,69.2,69.4,69.2,69.2,69.2,69.4,69.4,69.4,69.4,69.4,69.4,69.6,69.6,69.6,69.6,69.6,69.6,69.8,69.8,69.8,69.8,69.9,69.9,69.9,69.9,69.9,69.9,69.8,69.8,69.9,69.9,69.8,69.8,69.9,69.9,69.9,69.9,69.9,69.9,69.9,69.9,70.1,70.1,70.1,70.1,70.1,70.3,70.3,70.1,70.3,70.3,70.3,70.3,70.3,70.1,69.9,69.9,69.9,69.9,69.8,69.8,69.9,69.9,69.9,68.3,68.3,68.1,68.1,68.1,68.1,68.1,68.3,68.3]
+    
+            // }, {
+            //     name: 'Voll',
+            //     data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.3, 0.0,
+            //         0.0, 0.4, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+            //         0.0, 0.6, 1.2, 1.7, 0.7, 2.9, 4.1, 2.6, 3.7, 3.9, 1.7, 2.3,
+            //         3.0, 3.3, 4.8, 5.0, 4.8, 5.0, 3.2, 2.0, 0.9, 0.4, 0.3, 0.5, 0.4]
+            }]
+            ,
+            navigation: {
+                menuItemStyle: {
+                    fontSize: '10px'
+                }
+            }
+        });
+    });
+    
+
+		</script>
+	</head>
+	<body>
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
