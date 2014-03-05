@@ -1,0 +1,475 @@
+	body {background: url(minicooper.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	input#lights {
+		display: block;
+		width: 68px;
+		height: 240px;
+
+		border: 1px solid black;
+		text-indent: -999em;
+		-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+		position: absolute;
+		right: 30px;
+		top: 20px;
+	}
+	input:focus, #lights-on, #lights-off { border: none; outline: 0; background: none;}
+
+	#lights-on, #lights-off {
+		display: block;
+		text-indent: -999em;
+		height: 75px;
+		width: 75px;
+		position: absolute;
+		top: 640px;
+		left: 90px;
+		/*border: 1px solid black;*/
+		-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+	}
+
+/*	#lights-on, #lights-off {
+		color: white;
+		font-size: 70px;
+	}
+
+	#lights-on { text-shadow: 0px 1px 6px white }
+	#lights-off { text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5) }*/
+
+	button {
+		background: #5b5b5b;
+		border-top: 1px solid rgba(255,255,255,0.34);
+		border-right: 1px solid rgba(0,0,0,0.04);
+		border-bottom: 1px solid rgba(0,0,0,0.43);
+		border-left: 1px solid rgba(0,0,0,0.04);
+		box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+		padding: 6px 40px;
+		color: white;
+		font-size: 14px;
+		border-radius: 1px;
+		font-family: 'Roboto', sans-serif;
+	}
+
+	input[type="checkbox"] {
+		-webkit-appearance: none;
+		width: 18px;
+		height: 18px;
+		border: 1px solid;
+		background: none;
+		border-radius: 1px;
+		border-color:#3C3C3C;
+		border-color:rgba(204,204,204,0.4);
+	}
+
+	input[type="checkbox"]:focus {
+		-webkit-box-shadow:0px 0px 0px 2px rgba(51,181,229,0.9);
+	}
+
+	input[type="checkbox"]:enabled:active, input[type="checkbox"]:enabled.active {
+	-webkit-box-shadow:0px 0px 0px 6px rgba(51,181,229,0.4);
+	   -moz-box-shadow:0px 0px 0px 6px rgba(51,181,229,0.4);
+	        box-shadow:0px 0px 0px 6px rgba(51,181,229,0.4);
+	background-color:#33B5E5;
+	background-color:rgba(51,181,229,0.5);
+	}
+
+input[type="checkbox"]:checked {
+	background-color:#0099CC;
+	/*background:url(check-dark.png) left bottom;*/
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAARCAMAAAAIRmf1AAAAAXNSR0IArs4c6QAAAmdQTFRFM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7XlM7PjKpW9MazaM7XlzMzMzMzMzMzMy8zMxsvNucnPpcbSjMLWdr/aZ73dUbrgM7TkLYKiTI+nOH6YMKrXM7XlzMzMy8zMyszMyszMyczMx8vNwsvNu8nPsMjQpMbTmcTUfcDYLYqsR5u6TLvjTKrNMnuXMKvYM7Xlx8vNM7XlM7XlM7TkLo6yRpu6RLjjObTiLoutJIGjM7XlvcrOxsvNM7XlM7XlM7XlLpC0Rpq5MrLhKpa9IXSSMa3bM7Xls8jQwcrOM7XlM7XlM7XlM7XlM7XlLpK3KpW9InmZMa7dqsfSvcrOMrPiLIGgLYmrM7TkM7XlM7XlM7XlL5S6RZm4RLjiKpW9I3ydMrDeM7XlM7Xlo8bTucnPMrPjLH2bT5y5TZu3Lo+zM7XlM7XlL5i+RZm4I36fMrDfM7Xln8XTtsnQJX6eQZi4RLnjRbjjRZq5L5i/L5rCRJm4RLjiMrHhI36fWrfaQLfjnsXTtcnQM7XlIXKQLZa9M7LhR5q4Rpi3KpW8JH6fMrDflMPVYLzeocbTt8nQMKzZIXWUKpa+QbjkJH6gMrHgM7XloMXTcL7bp8bSusnPMa7cInqaKpe+JH6grMfRhcHYr8jRvsrOM7XlMa/dI3ucKpW8I32fMrHguMnPncXUucrPw8vNMa/dInmZKpS7KZO6InqbMrDfxMvNx8zNM7XlMa3bIHKQIXSSMa/ew8vNM7XlM7XlM7XlzMzMyMzMv8rOyMzNv8rOusrOt8nPNLXlM7XlT49zIwAAAAF0Uk5TAEDm2GYAAAAJcEhZcwAACxMAAAsTAQCanBgAAABmSURBVBjTY2AgCBQwhQyNjNGFbGxP29mjCnnYnvb0whQKQxVKTjntmQrj5OWDyBJkoeqa2joGhsam081wIYbuntMpvX1AoX4kg2Z4np45E1WIgWGx55kzaEIgweY1GH7auo2BSgAALNIh9xzOtlkAAAAASUVORK5CYII=) left bottom;
+}
+
+input[type="checkbox"]:checked:enabled:active,
+input[type="checkbox"]:checked:enabled.active {
+	background-color:#FFFFFF;
+	/*background:rgba(51,181,229,0.4) url(check-active-dark.png) left bottom;*/
+	background:rgba(51,181,229,0.4) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAARCAYAAAA/mJfHAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAZlJREFUOMvd001LAkEYB/ARkwixg+EHsIKOdY6OfQgxjC5ZURF0CqK3rxCBgdcOWVEdIqOy0C22F22NoLItTah0HF3c1dx1d2e3Q1lLCKVeov99fvPwn2cA+AuZCGWWPbGcr5eA3TVBM2FmM56XXiSsSATkgw4CdlYFzYaZ7XheSirqewRZEeZvspsVQ9NhZvcxJ8ESJCmqHEjylIOAXRVBUxRzEM1JqS9IkQnIXw2QqaWKoMkLxv/ASUgLBSB/PXSCVsseGD9P71GZ4tPCLRu0E7AVAAB6CNgxSTHH95yY/oSwIvuThcjgCdr4btQBAMDoKfIOtzW2W00Gi9VU19Sg162bz9KspV5fb7caW5pNBrMOACArKj5CQtQTy9OqDrjKTjV3yRxmi/j143KVFbGwFs/TNCcy2okOEvz9AIm8P/ayGGHPWRHz6lcvWANhX6Lw4CTR1q9KtgWg0X3HXWhBDRR1kmi7olezE7DFTXNUCRSxIu+/FKL9JFqpasNtfmh0RdgQEuTcznOB7jtOjdT8kcfO0j7wb/IGCSVN6j2UdLQAAAAASUVORK5CYII=) left bottom;
+}
+
+	select {
+		-webkit-appearance: none;
+		position: relative;
+		height: 30px;
+		text-align: center;
+		border: none;
+		background: none;
+		border-bottom: 1px solid #444;
+		padding-right: 15px;
+		padding-left: 10px;
+		color: white;
+		margin: 10px 15px;
+		border-radius: 0;
+	}
+
+	select option {text-align: center; color: black;}
+
+	label.select:after {
+	    content:'';
+	    width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 0 0 10px 10px;
+		border-color: transparent transparent #444 transparent;
+	    position:absolute;
+	    pointer-events:none;
+	    margin-left: -28px;
+	    margin-top: 42px;
+	}
+
+	.time-field {
+		display: inline-block;
+		margin: 0 15px;
+	}
+
+	form input[type='time']::-webkit-outer-spin-button,
+	form input[type='time']::-webkit-inner-spin-button,
+	form input[type="time"]::-webkit-clear-button {
+	    -webkit-appearance: none;
+	    margin: 0;
+	}
+
+	.field-bracket {
+		height: 8px;
+		bottom: 0px;
+		width: 100%;
+		border:1px solid #444;
+		border-top: none;
+		margin-top: -23px;
+	}
+
+	input[type="time"] {
+		-webkit-appearance: none;
+		background: none;
+		border: none;
+		margin: 10px;
+		padding: 10px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 14px;
+		color: white;
+	}
+
+	#container {
+		display: block;
+		height: 200px;
+		margin: auto;
+		position: relative;
+		top: 20px;
+		width: 760px;
+	}
+
+	#cur-temp {
+		font-size: 80px;
+	}
+
+	#thermostat {
+		font-family: 'Roboto';
+		color: white;
+		padding-right: 10px;
+		text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+		position: absolute;
+		right: 0;
+		top: 550;
+		text-align: center;
+	}
+
+	#furnace-status {
+		font-size: 20px;
+		text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.85);
+	}
+
+	#thermostat-settings {
+		background: #282828;
+		position: absolute;
+		left: 50%;
+		width: 780px;
+		margin-left: -390px;
+		z-index: 1001;
+		border: 1px outset;
+		border-top-color: #4b4b4b;
+		border-bottom-color: #212121;
+		border-left-color: #242424;
+		border-right-color: #272727;
+		border-radius: 3px;
+		box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.75);
+		/*height: 350px;*/
+	}
+
+	#thermostat-settings button#temp-submit {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+	}
+
+	#settings-header {
+		border-bottom: 2px solid #33B5E5;
+		color: #33B5E5;
+		font-family: 'Roboto';
+		font-size: 18px;
+		padding: 10px;
+	}
+
+	#thermostat-settings form {
+		padding-left: 20px;
+		padding-top: 10px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 14px;
+		color: white;
+	}
+
+	.remove-row {
+		display: inline;
+		color: #c0c0c0;
+		font-size: 40px;
+		position: relative;
+		top: 5px;
+		padding-right: 10px;
+		cursor: pointer;
+	}
+
+	#thermostat-settings .set-day {
+		display: inline-block;
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-top: 10px;
+	}
+
+	#thermostat-settings .set-day td {
+		font-family: 'Roboto', sans-serif;
+		font-size: 14px;
+		color: white;
+		text-align: center;
+	}
+
+	#clock {
+		color: white;
+		font-family: 'Roboto', Helvetica, Arial, sans-serif;
+		font-size: 250px;
+		text-shadow: 0px 0px 14px rgba(0, 0, 0, 0.5);
+		text-align: center;
+		margin-top: 100px;
+/*		-webkit-text-stroke-width: 2px;
+   		-webkit-text-stroke-color: black;*/
+	}
+
+	#cache {
+		position: absolute;
+		border: none;
+		height: 32px;
+		width: 32px;
+		bottom: 0px;
+		left: 0px;
+		background-color: rgba(0,0,0,0);
+	}
+
+	#shade {
+		position: absolute;
+		background-color: rgba(0,0,0,0.75);
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1000;
+	}
+
+/*	.testblock {
+		width: 860px;
+		height: 75px;
+		position: absolute;
+		left: 0px;
+		top: 239px;
+		background: rgba(0,0,0,0.75);
+		display: block;
+		z-index: -999;
+	}*/
+
+@font-face {
+    font-family: 'weather';
+    src: url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.eot');
+    src: url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.woff') format('woff'),
+         url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.ttf') format('truetype'),
+         url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-0:before { content: ":"; }
+.icon-1:before { content: "p"; }
+.icon-2:before { content: "S"; }
+.icon-3:before { content: "Q"; }
+.icon-4:before { content: "S"; }
+.icon-5:before { content: "W"; }
+.icon-6:before { content: "W"; }
+.icon-7:before { content: "W"; }
+.icon-8:before { content: "W"; }
+.icon-9:before { content: "I"; }
+.icon-10:before { content: "W"; }
+.icon-11:before { content: "I"; }
+.icon-12:before { content: "I"; }
+.icon-13:before { content: "I"; }
+.icon-14:before { content: "I"; }
+.icon-15:before { content: "W"; }
+.icon-16:before { content: "I"; }
+.icon-17:before { content: "W"; }
+.icon-18:before { content: "U"; }
+.icon-19:before { content: "Z"; }
+.icon-20:before { content: "Z"; }
+.icon-21:before { content: "Z"; }
+.icon-22:before { content: "Z"; }
+.icon-23:before { content: "Z"; }
+.icon-24:before { content: "E"; }
+.icon-25:before { content: "E"; }
+.icon-26:before { content: "3"; }
+.icon-27:before { content: "a"; }
+.icon-28:before { content: "A"; }
+.icon-29:before { content: "a"; }
+.icon-30:before { content: "A"; }
+.icon-31:before { content: "6"; }
+.icon-32:before { content: "1"; }
+.icon-33:before { content: "6"; }
+.icon-34:before { content: "1"; }
+.icon-35:before { content: "W"; }
+.icon-36:before { content: "1"; }
+.icon-37:before { content: "S"; }
+.icon-38:before { content: "S"; }
+.icon-39:before { content: "S"; }
+.icon-40:before { content: "M"; }
+.icon-41:before { content: "W"; }
+.icon-42:before { content: "I"; }
+.icon-43:before { content: "W"; }
+.icon-44:before { content: "a"; }
+.icon-45:before { content: "S"; }
+.icon-46:before { content: "U"; }
+.icon-47:before { content: "S"; }
+
+#weather, #now-playing {
+  font: 13px 'Roboto', 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#weather {
+  width: 555px;
+/*  margin: 0px auto;*/
+  text-align: right;
+  text-transform: uppercase;
+  position: absolute;
+  right: 0px;
+  top: 680px;
+}
+
+#weather i {
+  color: #fff;
+  font-family: weather;
+  font-size: 140px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+  display: block;
+  height: 125px;
+  text-align: center;
+  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+#weather h2 {
+  margin: -5 0 8px;
+  color: #fff;
+  font-size: 80px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+#weather h3 {
+  margin: 0px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 50;
+  text-align: center;
+  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#weather ul {
+  margin: 0;
+  padding: 0;
+}
+
+#weather li {
+  background: #fff;
+  background: rgba(255,255,255,0.90);
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+#weather .currently {
+  margin: 0 10px;
+}
+
+#weather table {
+/*	float: left;*/
+	width: 100px;
+}
+
+#weather .forecast {
+	width: 140px;
+	float: left;
+}
+
+#weather .forecast.future h3 {
+	text-indent: 5px;
+}
+
+#weather .forecast.future {
+	width: 100px
+}
+
+#weather .forecast.future i {
+	height: 136px;
+}
+
+#now-playing {
+	display: block;
+	position: absolute !important;
+	bottom: 15px;
+	right: 15px;
+	z-index: 999;
+	color: white;
+}
+
+#now-playing .thumbnail {
+	height: 325px;
+	width: auto;
+	box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.75);
+	margin-left: 25px;
+}
+
+#now-playing div {
+	color: white;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.75);
+	text-align: right;
+}
+
+#now-playing .song-title, #now-playing .movie-title, #now-playing .episode-show {
+	color: white;
+	font-size: 55px;
+	font-weight: 50;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.75);
+	width: 480px;
+}
+
+#now-playing .song-artist, #now-playing .episode-title {
+	font-size: 30px;
+	font-weight: 50;
+}
+
+#now-playing .song-album {
+	font-size: 20px;
+	font-weight: 50;
+}
+
+#now-playing .movie-plot {
+	text-align: justify;
+	width: 500px;
+}
+
+#old-media-id, #media-id {
+	display: none;
+}
