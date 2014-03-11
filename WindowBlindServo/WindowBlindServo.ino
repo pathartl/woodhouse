@@ -24,28 +24,11 @@ IRrecv irrecv(RECV_PIN);
 
 decode_results results;
 
-// Deprecated
-void moveBlinds(int direction) {
-  if (direction == 0) {
-    Serial.println("Blinds up");
-    
-    servo.write(80);
-    delay(1300 * 4);
-    servo.detach();
-  } else if (direction == 1) {
-    Serial.println("Blinds down");
-    servo.attach(SERVO_PIN);
-    servo.write(100);
-    delay(1600 * 4);
-    servo.detach();    
-  }
-}
-
 // Reads the potentiometer and smooths it out by doing an average
 int readPot() {
 	int total;
 
-	// Shift array values to left and add to total
+	// Count to numReading and add the potentiometer valu to the total each time
 	for (int i = 0; i < numReadings; i++) {
 		total += analogRead(POT_PIN);
 	}
@@ -66,16 +49,14 @@ void positionBlinds(int pos) {
 		case 0:
 			// A little extra logic for opening because we have to
 			// check what position the blinds are in.
-			// if (readPot() ) {
-			// 	servo.write(80);
-			// } else if (readPot() > )
 
 			// We need to rotate the blinds in the correct direction
 			// Less than the mid should rotate up
-			// More than the mid should rotate down
 			if (readPot() < (POT_MID - 20)) {
 				servo.write(80);
 			}
+
+			// More than the mid should rotate down
 
 			if (readPot() > (POT_MID + 20)) {
 				servo.write(100);
