@@ -4,9 +4,9 @@
 #include <Servo.h> 
 
 // Pin definitions
-int RECV_PIN = 3;
+int RECV_PIN = 4;
 int SERVO_PIN = 2;
-int LED_PIN = 13;
+int LED_PIN = 3;
 int POT_PIN = 0;
 
 int BLIND_STATUS = 1; // Deprecated
