@@ -62,7 +62,7 @@ void positionBlinds(int pos) {
 				servo.write(100);
 			}
 
-			while ( (readPot() > (POT_MID + 20)) || (readPot() > (POT_MID + 20)) ) {
+			while ( (readPot() > (POT_MID + 20)) || (readPot() < (POT_MID - 20)) ) {
 				delay(100);
 			}
 			break;
