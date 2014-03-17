@@ -15,8 +15,8 @@ int numReadings = 10;
 
 // Pot limits
 int POT_MAX = 930;
-int POT_MID = 490;
 int POT_MIN = 20;
+int POT_MID = (POT_MAX - POT_MIN) / 2;
 
 Servo servo;
 
